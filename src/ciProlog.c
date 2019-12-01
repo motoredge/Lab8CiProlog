@@ -108,6 +108,6 @@ bool retract(char *proposition)
 bool eval(char *proposition)
 {
     // TODO implement the function
-    PROP_TYPE *currNode = kb_head
+    PROP_TYPE *currNode = kb_head;
     return false;
 };

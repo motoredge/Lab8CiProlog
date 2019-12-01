@@ -22,10 +22,29 @@ prop '{l}({l}|\ )*'
             return PROPOSITION;
             }
 
-{logexpr}   {
-            yylval.bval = malloc(strlen(yytext)+1);
-            strcopy(bval.sval, yytext);
-            return LOGEXPR;
+"retract"   {
+            fprintf(stderr, "lex: RETRACT\n");
+            return RETRACT;
+            }
+
+"assert"   {
+            fprintf(stderr, "lex: ASSERT\n");
+            return ASSERT;
+            }
+
+"AND"   {
+            fprintf(stderr, "lex: AND\n");
+            return AND;
+            }
+
+"OR"   {
+            fprintf(stderr, "lex: OR\n");
+            return OR;
+            }
+
+"NOT"   {
+            fprintf(stderr, "lex: NOT\n");
+            return NOT;
             }
 
 "("         {
